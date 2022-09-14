@@ -35,7 +35,12 @@ variable "stg_is_hns_enabled" {
   type        = string
 }
 
-variable "stg_container_name" {
+variable "stg_container1_name" {
+  description = "Name of the container in storage account to create."
+  type        = string
+}
+
+variable "stg_container2_name" {
   description = "Name of the container in storage account to create."
   type        = string
 }
@@ -120,17 +125,17 @@ variable "adf_name" {
   type        = string
 }
 
-variable "adf_github_account_name" {
+variable "github_account_name" {
   description = ""
   type        = string
 }
 
-variable "adf_github_branch_name" {
+variable "github_branch_name" {
   description = ""
   type        = string
 }
 
-variable "adf_github_branch_git_url" {
+variable "github_url" {
   description = ""
   type        = string
 }
@@ -140,7 +145,7 @@ variable "adf_github_repository_name" {
   type        = string
 }
 
-variable "adf_github_root_folder" {
+variable "github_root_folder" {
   description = ""
   type        = string
 }
@@ -181,6 +186,111 @@ variable "kv_kvs1_name" {
 }
 
 variable "kv_kvs2_name" {
+  description = ""
+  type        = string
+}
+
+variable "snpse_pool_stg_name" {
+  description = ""
+  type        = string
+}
+
+variable "snpse_pool_stg_account_kind" {
+  description = ""
+  type        = string
+}
+
+variable "snpse_pool_dl_name" {
+  description = ""
+  type        = string
+}
+
+variable "snpse_pool_workspace_name" {
+  description = ""
+  type        = string
+}
+
+variable "snpse_pool_sql_administrator_login" {
+  description = ""
+  type        = string
+}
+
+variable "snpse_pool_sql_administrator_login_password" {
+  description = ""
+  type        = string
+}
+
+variable "snpse_pool_managed_rg_name" {
+  description = ""
+  type        = string
+}
+
+variable "snpse_pool_sql_name" {
+  description = ""
+  type        = string
+}
+
+variable "snpse_pool_sku_name" {
+  description = ""
+  type        = string
+}
+
+variable "snpse_pool_create_mode" {
+  description = ""
+  type        = string
+}
+
+variable "snpse_pool_github_repository_name" {
+  description = ""
+  type        = string
+}
+
+variable "mssql_stg_name" {
+  description = ""
+  type        = string
+}
+
+variable "mssql_dbsrv_name" {
+  description = ""
+  type        = string
+}
+
+variable "mssql_dbsrv_version" {
+  description = ""
+  type        = string
+}
+
+variable "mssql_dbsrv_administrator_login" {
+  description = ""
+  type        = string
+}
+
+variable "mssql_dbsrv_administrator_login_password" {
+  description = ""
+  type        = string
+}
+
+variable "mssql_db_name" {
+  description = ""
+  type        = string
+}
+
+variable "mssql_db_collation" {
+  description = ""
+  type        = string
+}
+
+variable "mssql_db_license_type" {
+  description = ""
+  type        = string
+}
+
+variable "mssql_db_max_size_gb" {
+  description = ""
+  type        = number
+}
+
+variable "mssql_db_sku_name" {
   description = ""
   type        = string
 }

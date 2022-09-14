@@ -3,9 +3,9 @@ output "primary_blob_connection_string" {
   value       = azurerm_storage_account.stg_account.primary_blob_connection_string
 }
 
-output "container_name" {
-  description = "container name"
-  value       = azurerm_storage_container.container.name
+output "container1_name" {
+  description = "container name for raw data"
+  value       = azurerm_storage_container.container1.name
 }
 
 output "primary_access_key" {

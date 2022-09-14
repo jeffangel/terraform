@@ -28,3 +28,14 @@ resource "azurerm_iothub" "iothub" {
   }
 
 }
+
+resource "azurerm_iothub_route" "route1" {
+  resource_group_name = var.rg_name
+  iothub_name         = azurerm_iothub.iothub.name
+  name                = "ToDefault"
+
+  source         = "DeviceMessages"
+  condition      = "true"
+  endpoint_names = ["events",]
+  enabled        = true
+}

@@ -8,9 +8,14 @@ resource "azurerm_storage_account" "stg_account" {
   is_hns_enabled           = var.is_hns_enabled
 }
 
-resource "azurerm_storage_container" "container" {
-  name                  = var.container_name
+resource "azurerm_storage_container" "container1" {
+  name                  = var.container1_name
   storage_account_name  = azurerm_storage_account.stg_account.name
   container_access_type = var.container_access_type
 }
 
+resource "azurerm_storage_container" "container2" {
+  name                  = var.container2_name
+  storage_account_name  = azurerm_storage_account.stg_account.name
+  container_access_type = var.container_access_type
+}

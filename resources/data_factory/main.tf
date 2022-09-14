@@ -10,8 +10,8 @@ resource "azurerm_data_factory" "adf" {
   github_configuration {  
     account_name = var.account_name
     branch_name = var.branch_name
-    git_url = var.branch_git_url
-    repository_name = var.repository_name
+    git_url = var.git_url
+    repository_name = var.adf_repository_name
     root_folder = var.root_folder
   }
 }

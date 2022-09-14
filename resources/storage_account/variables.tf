@@ -33,7 +33,12 @@ variable "is_hns_enabled" {
   type        = bool
 }
 
-variable "container_name" {
+variable "container1_name" {
+  description = "The name of the container inside the stg."
+  type        = string
+}
+
+variable "container2_name" {
   description = "The name of the container inside the stg."
   type        = string
 }

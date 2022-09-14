@@ -1,8 +1,3 @@
-variable "name" {
-  description = "The name of the DF."
-  type        = string
-}
-
 variable "rg_name" {
   description = "The name of the RG."
   type        = string
@@ -12,58 +7,63 @@ variable "location" {
   description = "The location of the RG."
   type        = string
 }
-/*
-variable "ls1_name" {
+
+variable "stg_name" {
   description = ""
   type        = string
 }
 
-variable "dtlkv2_key" {
+variable "stg_account_tier" {
   description = ""
   type        = string
 }
 
-variable "dtlkv2_url" {
+variable "stg_account_replication_type" {
   description = ""
   type        = string
 }
 
-variable "ls2_name" {
+variable "dbsrv_name" {
   description = ""
   type        = string
 }
 
-variable "ls3_name" {
+variable "dbsrv_version" {
   description = ""
   type        = string
 }
 
-variable "kv_id" {
-  description = ""
-  type        = string
-}
-*/
-variable "account_name" {
+variable "dbsrv_administrator_login" {
   description = ""
   type        = string
 }
 
-variable "branch_name" {
+variable "dbsrv_administrator_login_password" {
   description = ""
   type        = string
 }
 
-variable "git_url" {
+variable "db_name" {
   description = ""
   type        = string
 }
 
-variable "adf_repository_name" {
+variable "db_collation" {
   description = ""
   type        = string
 }
 
-variable "root_folder" {
-  description = "The location of the RG."
+variable "db_license_type" {
+  description = ""
+  type        = string
+}
+
+variable "db_max_size_gb" {
+  description = ""
+  type        = number
+}
+
+variable "db_sku_name" {
+  description = ""
   type        = string
 }
