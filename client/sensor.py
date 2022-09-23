@@ -28,7 +28,7 @@ async def send_telemetry_from_temp_controller(device_client, telemetry_msg, comp
     await asyncio.sleep(5)
 
 async def main():
-    conn_str = 'HostName=jeariothub1.azure-devices.net;DeviceId=SampleDevice001;SharedAccessKey=e+RKiEYlrqHXjjrROjMvFRvEQYCArXCLcDA0I+rP3iU='
+    conn_str = 'HostName=jeariothub1.azure-devices.net;DeviceId=Sensor1;SharedAccessKey=iPRxn3QiTithEv169f+NyJbvweg5Ss6+LwFdFA30xfc='
     print("Connecting using Connection String " + conn_str)
     device_client = IoTHubDeviceClient.create_from_connection_string(
         conn_str, product_info=model_id
@@ -72,3 +72,5 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
+#az iot hub monitor-events --output table --device-id Sensor1 --hub-name jeariothub1

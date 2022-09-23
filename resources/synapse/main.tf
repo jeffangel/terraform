@@ -49,3 +49,17 @@ resource "azurerm_synapse_sql_pool" "dwh" {
   create_mode          = var.sql_create_mode
 }
 
+resource "azurerm_synapse_firewall_rule" "snpse-fwr_azs" {
+  name                 = "AllowAllWindowsAzureIps"
+  synapse_workspace_id = azurerm_synapse_workspace.synapse.id
+  start_ip_address     = "0.0.0.0"
+  end_ip_address       = "0.0.0.0"
+}
+
+resource "azurerm_synapse_firewall_rule" "snpse-fwr_external" {
+  name                 = "AllowAll"
+  synapse_workspace_id = azurerm_synapse_workspace.synapse.id
+  start_ip_address     = "0.0.0.0"
+  end_ip_address       = "255.255.255.255"
+}
+

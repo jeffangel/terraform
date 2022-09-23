@@ -294,3 +294,23 @@ variable "mssql_db_sku_name" {
   description = ""
   type        = string
 }
+
+variable "aas_name" {
+  description = ""
+  type        = string
+}
+
+variable "aas_sku_name" {
+  description = ""
+  type        = string
+}
+
+variable "aas_admin_users" {
+  description = ""
+  type        = list(any)
+}
+
+variable "aas_enable_power_bi_service" {
+  description = ""
+  type        = bool
+}

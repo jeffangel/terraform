@@ -43,6 +43,11 @@ variable "object_id" {
   type        = string
 }
 
+variable "object_id_tmp" {
+  description = ""
+  type        = string
+}
+
 variable "kvs1_name" {
   description = ""
   type        = string

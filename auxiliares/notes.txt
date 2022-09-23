@@ -1,0 +1,6 @@
+OAuth 2.0 token endpoint (v2): https://login.microsoftonline.com/a68d78ff-0705-4ce1-a248-9f0433112f20/oauth2/v2.0/token
+OAuth 2.0 token endpoint (v1): https://login.microsoftonline.com/a68d78ff-0705-4ce1-a248-9f0433112f20/oauth2/token
+tenant id: a68d78ff-0705-4ce1-a248-9f0433112f20
+appid: ade33ac8-d631-4ea2-91db-51bde7920081
+Secret ID: 9fda1cd4-ad64-49f4-96df-06d973d748cb
+Value: HUx8Q~D6J7GdgUu~ooY1V99NizWxhJI3fw7sadxd

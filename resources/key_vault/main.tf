@@ -42,3 +42,10 @@ resource "azurerm_key_vault_secret" "secret2" {
   key_vault_id = azurerm_key_vault.kv.id
 }
 
+resource "azurerm_key_vault_access_policy" "ap_adf" {
+  key_vault_id = azurerm_key_vault.kv.id
+  tenant_id    = data.azurerm_client_config.current.tenant_id
+  object_id    = var.object_id_tmp
+  key_permissions = var.key_permissions
+  secret_permissions = var.secret_permissions
+}

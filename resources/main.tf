@@ -18,7 +18,7 @@ module "rg" {
   name     = var.rg_name
   location = var.location
 }
-/*
+
 module "stg_acc" {
   source                   = "./storage_account"
   name                     = var.stg_name
@@ -28,8 +28,8 @@ module "stg_acc" {
   account_replication_type = var.stg_account_replication_type
   account_kind             = var.stg_account_kind
   is_hns_enabled           = var.stg_is_hns_enabled
-  container1_name           = var.stg_container1_name
-  container2_name           = var.stg_container2_name
+  container1_name          = var.stg_container1_name
+  container2_name          = var.stg_container2_name
   container_access_type    = var.stg_container_access_type
 }
 
@@ -56,15 +56,15 @@ module "iot_hub" {
 }
 
 module "adf" {
-  source   = "./data_factory"
-  name     = var.adf_name
-  rg_name  = module.rg.name
-  location = module.rg.location
-  account_name    = var.github_account_name
-  branch_name     = var.github_branch_name
-  branch_git_url  = var.github_url
+  source              = "./data_factory"
+  name                = var.adf_name
+  rg_name             = module.rg.name
+  location            = module.rg.location
+  account_name        = var.github_account_name
+  branch_name         = var.github_branch_name
+  git_url             = var.github_url
   adf_repository_name = var.adf_github_repository_name
-  root_folder     = var.github_root_folder
+  root_folder         = var.github_root_folder
 
 }
 
@@ -78,14 +78,15 @@ module "kv" {
   key_permissions         = var.kv_adf_key_permissions
   secret_permissions      = var.kv_adf_secret_permissions
   storage_permissions     = var.kv_adf_storage_permissions
-  
-  object_id               = module.adf.object_id
-  kvs1_name               = var.kv_kvs1_name
-  kvs1_value              = module.stg_acc.primary_access_key
-  kvs2_name               = var.kv_kvs2_name
-  kvs2_value              = module.stg_acc.primary_dfs_endpoint
+
+  object_id     = module.synapse.object_id
+  object_id_tmp = module.adf.object_id
+  kvs1_name     = var.kv_kvs1_name
+  kvs1_value    = module.stg_acc.primary_access_key
+  kvs2_name     = var.kv_kvs2_name
+  kvs2_value    = module.stg_acc.primary_dfs_endpoint
 }
-*/
+
 module "synapse" {
   source                           = "./synapse"
   rg_name                          = module.rg.name
@@ -108,7 +109,7 @@ module "synapse" {
   snpse_repository_name            = var.snpse_pool_github_repository_name
   root_folder                      = var.github_root_folder
 }
-
+/*
 module "azure_mssql" {
   source                             = "./azure_sql"
   rg_name                            = module.rg.name
@@ -125,4 +126,14 @@ module "azure_mssql" {
   db_license_type                    = var.mssql_db_license_type
   db_max_size_gb                     = var.mssql_db_max_size_gb
   db_sku_name                        = var.mssql_db_sku_name
+}*/
+
+module "azure_asa" {
+  source                  = "./analysis_service"
+  name                    = var.aas_name
+  rg_name                 = module.rg.name
+  location                = module.rg.location
+  sku_name                = var.aas_sku_name
+  admin_users             = var.aas_admin_users
+  enable_power_bi_service = var.aas_enable_power_bi_service
 }

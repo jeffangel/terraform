@@ -73,8 +73,11 @@ mssql_db_license_type                    = "LicenseIncluded"
 mssql_db_max_size_gb                     = 4
 mssql_db_sku_name                        = "S0"
 
-
-
+#Analysis Services
+aas_name                    = "aasjear931993th"
+aas_sku_name                = "S0"
+aas_admin_users             = ["jear.93@outlook.com"]
+aas_enable_power_bi_service = true
 
 
 
