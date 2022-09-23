@@ -8,12 +8,6 @@ WITH
     SECRET = 'HUx8Q~D6J7GdgUu~ooY1V99NizWxhJI3fw7sadxd'
 ;
 
--- Create a database scoped credential with Azure storage account key as the secret.
-CREATE DATABASE SCOPED CREDENTIAL AzureStorageCredential
-WITH
-  IDENTITY = 'StorageAccount',
-  SECRET = 'v8m61uuV+q/+/CrrjgmnUuc0NYAbyL3JGQ16Y2/dwjFit3VcdApLjghgdvglc8jmgqesdXk7Wtv/9SvMB4AJ9A==' ;
-
 -- Create an external data source with CREDENTIAL option.
 CREATE EXTERNAL DATA SOURCE MyAzureStorage
 WITH
